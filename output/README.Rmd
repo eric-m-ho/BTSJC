@@ -136,7 +136,15 @@ ggplot(data = BTdata2, aes(x = MathChange, y = ReadingChange))+
 
 ![Screen Shot](https://github.com/ohrice/BTSJC/blob/master/plots/MathReadingChange.png)
 
-_Two observations were omitted because of lack of information or outliers_
+_Two observations were omitted because of lack of information or outliers_.
 Compared to the previous graphs, the observations here exhibit fairly wide spread (variance) across the regression line. Despite this spread, though, the
 residual plot exhibits less clustering and more randomness compared to the residual plots of the other graphs. In fact, the significance level of the
 regression is lower (about 0.059) than the levels for the previous analyses. Who would've guessed? There's a pretty good linear model for these scores!
+
+## Conclusion
+
+Although my sample size was very small, I still had a lot of fun looking into the data and seeing which conclusions could be drawn. It seems that it does
+pay off to spend a little extra time on exams since it positively correlates (however weakly) with test score improvements and percentile rank. My
+analysis of the subsection scores also seems to confirm the importance of a solid foundation to prepare students for a rigorous math curriculum. Subjects in math are greatly correlated
+with one another, so it makes sense to ensure that students understand all parts, since success in one area could lead to success in other parts. I am happy
+to say that I have learned as much from my students as they have (hopefully) learned from me!

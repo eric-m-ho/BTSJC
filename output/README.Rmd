@@ -118,7 +118,7 @@ p=ggplot(data = longdat, aes(x = Student, y = Score, fill = Subsections)) +
 p
 
 ```
-![Screen Shot](https://github.com/ohrice/BTSJC/blob/master/plots/Subsection.png)
+![Screen Shot](https://github.com/ohrice/BTSJC/blob/master/plots/Subsection2.png)
 
 
 ## Just Curious: Math versus Reading

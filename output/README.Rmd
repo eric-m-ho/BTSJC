@@ -21,4 +21,4 @@ are some interesting patterns which emerged.
 
 ### Datasets
 
-![Screen Shot](https://gyazo.com/2f62a8e4ddfaa5899c9698f48e3985dd)
+![Screen Shot](https://github.com/ohrice/BTSJC/blob/master/images/Data.png)

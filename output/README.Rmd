@@ -54,10 +54,17 @@ ggplot(data = BTdata, aes(x = Time, y = MathChange))+
   geom_point(shape=3) +
   geom_smooth(method=lm)+labs(x='Time (minutes)',y='Change in Math Scores') + 
   ggtitle("Time vs. Change in Math Scores")
-
 ```
 ![Screen Shot](https://github.com/ohrice/BTSJC/blob/master/plots/TimeMathChange.png)
 
 
 #### Time vs. Percentile
- 
+
+```
+#Time vs. Percentile
+ggplot(data = BTdata, aes(x = Time, y = PercentileRank))+
+  geom_point(shape=3) +
+  geom_smooth(method=lm)+labs(x='Time (minutes)',y='PercentileRank') + 
+  ggtitle("Time vs. PercentileRank")
+```
+![Screen Shot](https://github.com/ohrice/BTSJC/blob/master/plots/TimePercentileRank.png)

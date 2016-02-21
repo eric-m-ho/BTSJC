@@ -98,7 +98,7 @@ cordata <- subset(BTdata, select = keeps)
 cor(cordata)
 
 ```
-![Screen Shot](https://github.com/ohrice/BTSJC/blob/master/plots/Cormatrix.png)
+![Screen Shot](https://github.com/ohrice/BTSJC/blob/master/images/Cormatrix.png)
 
 The correlation matrix above suggests that content mastery in one area correlates very significantly with success in another area. For example,
 students who perform well in "Algebra" are more likely to also perform well in "Functions." This definitely suggests that teachers should focus on

@@ -19,3 +19,6 @@ exam!
 Hence that August, I decided to delve into the data to see what I could glean. The sample size is very small, but there
 are some interesting patterns which emerged. 
 
+### Datasets
+
+![Screen Shot](https://raw.githubusercontent.com/ohrice/BTSJC/master/BTSJCData.csv)

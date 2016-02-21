@@ -22,3 +22,14 @@ are some interesting patterns which emerged.
 ### Datasets
 
 ![Screen Shot](https://github.com/ohrice/BTSJC/blob/master/images/Data.png)
+
+Above is a dataset that I created from the Renaissance Place assessment reports. I combined the students in
+both of my classes (seven students each, for 14 total).
+
+* **Student** column lists the students. For anonymity, I have used their initials.
+* **Pre-Test** column lists pre-program scores.
+* **Post-Test** column lists post-program scores.
+* **MathChange** column is the difference between post-test and pre-test scores (a positive number denotes improvement).
+* **Time** column lists time spent on the exam in minutes
+* **PercentileRank** column lists the percentile the students falls in, based on nationwide scores.
+* The other columns denote scores on subsections of the test.

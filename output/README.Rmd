@@ -3,7 +3,7 @@
 
 by Eric Ho
 
-### Introduction
+## Introduction
 
 During the summer of 2015, I was a teaching fellow for Breakthrough San Juan Capistrano, a program that serves
 underprivileged but highly motivated students in San Juan Capistrano by providing them summer instruction, tutoring 
@@ -19,7 +19,7 @@ exam!
 Hence that August, I decided to delve into the data to see what I could glean. The sample size is very small, but there
 are some interesting patterns which emerged. 
 
-### Datasets
+## Datasets
 
 ![Screen Shot](https://github.com/ohrice/BTSJC/blob/master/images/Data.png)
 
@@ -39,7 +39,7 @@ data for all of my students), but with their English test scores included.
 
 ![Screen Shot](https://github.com/ohrice/BTSJC/blob/master/images/Data2.png)
 
-### Time
+## Time
 
 I thought the most interesting data available was the Time data. Some of my students quite early while others took their time.
 I decided to see whether time made a difference.
@@ -57,8 +57,15 @@ ggplot(data = BTdata, aes(x = Time, y = MathChange))+
 ```
 ![Screen Shot](https://github.com/ohrice/BTSJC/blob/master/plots/TimeMathChange.png)
 
+It appears that there is a positive correlation between time spent on the exam and the change in math scores. It is possible that the bottom leftmost observation
+is an outlier (one of my students finished rather early). The ANOVA F statistic suggests that a linear relationship is significant at the 0.10 level. Finally,
+a residual plot suggests slight clustering but otherwise confirms that a linear model is a decent fit. So while the linear relationship is not extremely
+significant (especially with the small sample size), it is still an okay fit. If anything, time certainly doesn't hurt one's math scores, although whether
+it actually improves scores is still an unanswered question. 
 
 #### Time vs. Percentile
+
+Now, what about time versus percentile rank? How does time on the test affect one's percentile rank compared to students nationwide?
 
 ```
 #Time vs. Percentile
@@ -69,20 +76,51 @@ ggplot(data = BTdata, aes(x = Time, y = PercentileRank))+
 ```
 ![Screen Shot](https://github.com/ohrice/BTSJC/blob/master/plots/TimePercentileRank.png)
 
+Unlike the previous graph, there does not appear to be any significant outliers. However, the results are roughly the same in that the linear relationship
+is only significant at the 0.10 level. Like the previous analysis, the residual plot shows slight clustering but otherwise suggests that the linear model
+is an acceptable fit. Again, it certainly does not hurt to spend a little more time on the exam.
+
 ### Subsection Scores
 
+Each student report also contains information on how well each student performed in each subsection. The subsections are out of 100 and are named 
+
+* Algebra
+* Functions
+* Geometry
+* Numbers and Operations
+* Statistics and Probability
+
 #### Correlation Matrix
-```{r, echo=FALSE}
-library(data.table)
-library(dplyr)
-library(ggplot2)
-
-setwd("C:/Users/Eric/Desktop/BTSJC")
-
-BTdata<-fread("C:/Users/Eric/Desktop/BTSJC/BTSJCData.csv")
+```
 
 keeps <- c("Algebra", "Functions", "Geometry", "Numbers.Operations", "Statistics.Probability")
 cordata <- subset(BTdata, select = keeps)
 cor(cordata)
 
 ```
+![Screen Shot](https://github.com/ohrice/BTSJC/blob/master/plots/Cormatrix.png)
+
+The correlation matrix above suggests that content mastery in one area correlates very significantly with success in another area. For example,
+students who perform well in "Algebra" are more likely to also perform well in "Functions." This definitely suggests that teachers should focus on
+helping students draw relationships between different math domains or concepts instead of treating these subsections as separate subjects. 
+In more basic areas of math like pre-algebra, many concepts are much more closely tied together. 
+
+## Just Curious: Math versus Reading
+
+Teachers were not provided with detailed information regarding their students' performances on other subjects. I decided to canvass my English teachers
+colleagues for the English scores of my students. Perhaps I might find some interesting pattern between math and reading scores.
+
+```
+ggplot(data = BTdata2, aes(x = MathChange, y = ReadingChange))+
+  geom_point(shape=3) +
+  geom_smooth(method=lm)+labs(x='Change in Math Scores',y='Change in Reading Scores') + 
+  ggtitle("Change in Math Scores vs. Change in Reading Scores")
+
+```
+
+![Screen Shot](https://github.com/ohrice/BTSJC/blob/master/plots/MathReadingChange.png)
+
+_Two observations were omitted because of lack of information or outliers_
+Compared to the previous graphs, the observations here exhibit fairly wide spread (variance) across the regression line. Despite this spread, though, the
+residual plot exhibits less clustering and more randomness compared to the residual plots of the other graphs. In fact, the significance level of the
+regression is lower (about 0.059) than the levels for the previous analyses. Who would've guessed? There's a pretty good linear model for these scores!

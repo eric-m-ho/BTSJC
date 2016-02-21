@@ -79,7 +79,7 @@ library(ggplot2)
 
 setwd("C:/Users/Eric/Desktop/BTSJC")
 
-BTdata<-fread("BTSJCData.csv")
+BTdata<-fread("C:/Users/Eric/Desktop/BTSJC/BTSJCData.csv")
 
 keeps <- c("Algebra", "Functions", "Geometry", "Numbers.Operations", "Statistics.Probability")
 cordata <- subset(BTdata, select = keeps)

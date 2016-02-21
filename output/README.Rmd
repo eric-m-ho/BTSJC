@@ -33,3 +33,8 @@ both of my classes (seven students each, for 14 total).
 * **Time** column lists time spent on the exam in minutes
 * **PercentileRank** column lists the percentile the students falls in, based on nationwide scores.
 * The other columns denote scores on subsections of the test.
+
+Below is a dataset with the same students (except for outliers and missing students - I could not procure English score
+data for all of my students), but with their English test scores included.
+
+![Screen Shot](https://github.com/ohrice/BTSJC/blob/master/images/Data2.png)

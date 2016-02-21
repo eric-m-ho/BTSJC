@@ -38,3 +38,26 @@ Below is a dataset with the same students (except for outliers and missing stude
 data for all of my students), but with their English test scores included.
 
 ![Screen Shot](https://github.com/ohrice/BTSJC/blob/master/images/Data2.png)
+
+### Time
+
+I thought the most interesting data available was the Time data. Some of my students quite early while others took their time.
+I decided to see whether time made a difference.
+
+#### Time vs. Math Change
+
+Does time taken on a test affect the overall change in math scores? I ran a regression to find out.
+
+'''
+#Time vs. MathChange
+ggplot(data = BTdata, aes(x = Time, y = MathChange))+
+  geom_point(shape=3) +
+  geom_smooth(method=lm)+labs(x='Time (minutes)',y='Change in Math Scores') + 
+  ggtitle("Time vs. Change in Math Scores")
+
+'''
+![Screen Shot](https://github.com/ohrice/BTSJC/blob/master/plots/TimeMathChange.jpg)
+
+
+#### Time vs. Percentile
+ 

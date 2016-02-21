@@ -29,3 +29,12 @@ ggplot(data = BTdata2, aes(x = MathChange, y = ReadingChange))+
   geom_point(shape=3) +
   geom_smooth(method=lm)+labs(x='Change in Math Scores',y='Change in Reading Scores') + 
   ggtitle("Change in Math Scores vs. Change in Reading Scores")
+
+#stacked bar graph
+p=ggplot(data = BTdata, aes(x = Student, y = Algebra)) + 
+  geom_bar()
+
+#correlation matrix
+keeps <- c("Algebra", "Functions", "Geometry", "Numbers.Operations", "Statistics.Probability")
+cordata <- subset(BTdata, select = keeps)
+cor(cordata)

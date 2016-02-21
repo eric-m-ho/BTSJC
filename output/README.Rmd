@@ -68,3 +68,21 @@ ggplot(data = BTdata, aes(x = Time, y = PercentileRank))+
   ggtitle("Time vs. PercentileRank")
 ```
 ![Screen Shot](https://github.com/ohrice/BTSJC/blob/master/plots/TimePercentileRank.png)
+
+### Subsection Scores
+
+#### Correlation Matrix
+```{r echo = FALSE}
+library(data.table)
+library(dplyr)
+library(ggplot2)
+
+setwd("C:/Users/Eric/Desktop/BTSJC")
+
+BTdata<-fread("BTSJCData.csv")
+
+keeps <- c("Algebra", "Functions", "Geometry", "Numbers.Operations", "Statistics.Probability")
+cordata <- subset(BTdata, select = keeps)
+cor(cordata)
+
+```

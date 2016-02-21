@@ -56,7 +56,7 @@ ggplot(data = BTdata, aes(x = Time, y = MathChange))+
   ggtitle("Time vs. Change in Math Scores")
 
 ```
-![Screen Shot](https://github.com/ohrice/BTSJC/blob/master/plots/TimeMathChange.jpg)
+![Screen Shot](https://github.com/ohrice/BTSJC/blob/master/plots/TimeMathChange.png)
 
 
 #### Time vs. Percentile

@@ -1,6 +1,7 @@
 library(data.table)
 library(dplyr)
 library(ggplot2)
+library(tidyr)
 
 setwd("C:/Users/Eric/Desktop/BTSJC")
 
@@ -38,3 +39,16 @@ p=ggplot(data = BTdata, aes(x = Student, y = Algebra)) +
 keeps <- c("Algebra", "Functions", "Geometry", "Numbers.Operations", "Statistics.Probability")
 cordata <- subset(BTdata, select = keeps)
 cor(cordata)
+
+#subsection stacked bargraph
+keeps2 <- c("Student", "Algebra", "Functions", "Geometry", "Numbers.Operations", "Statistics.Probability")
+widedat <- subset(BTdata, select = keeps2)
+
+#convert to long data form
+longdat <- gather(widedat, Subsections, Score, Algebra:Statistics.Probability)
+View(longdat)
+
+cbPalette <- c('#ff6d6d','#8dff35','#ff9b35','#003fff',"#eee40d")
+p=ggplot(data = longdat, aes(x = Student, y = Score, fill = Subsections)) + 
+  geom_bar(stat="identity")+labs(x='Students', y = 'Scores', fill = 'Subsection') + ggtitle("Subsection Scores")+ scale_fill_manual(values=cbPalette)
+p

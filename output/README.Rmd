@@ -80,7 +80,7 @@ Unlike the previous graph, there does not appear to be any significant outliers.
 is only significant at the 0.10 level. Like the previous analysis, the residual plot shows slight clustering but otherwise suggests that the linear model
 is an acceptable fit. Again, it certainly does not hurt to spend a little more time on the exam.
 
-### Subsection Scores
+## Subsection Scores
 
 Each student report also contains information on how well each student performed in each subsection. The subsections are out of 100 and are named 
 
@@ -104,6 +104,22 @@ The correlation matrix above suggests that content mastery in one area correlate
 students who perform well in "Algebra" are more likely to also perform well in "Functions." This definitely suggests that teachers should focus on
 helping students draw relationships between different math domains or concepts instead of treating these subsections as separate subjects. 
 In more basic areas of math like pre-algebra, many concepts are much more closely tied together. 
+
+#### Stacked Bar Graph
+
+I decided to graph my students' performance (both in general and on each subsection) using a stacked bar plot. A cursory glance suggests that for a given
+student, his or her performance on a subsection was roughly equal to his or her performance on other subsections. This would seem to reinforce the previous
+finding that performances on subsections are positive correlated with one another.
+
+```
+cbPalette <- c('#ff6d6d','#8dff35','#ff9b35','#003fff',"#eee40d")
+p=ggplot(data = longdat, aes(x = Student, y = Score, fill = Subsections)) + 
+  geom_bar(stat="identity")+labs(x='Students', y = 'Scores', fill = 'Subsection') + ggtitle("Subsection Scores")+ scale_fill_manual(values=cbPalette)
+p
+
+```
+![Screen Shot](https://github.com/ohrice/BTSJC/blob/master/plots/Subsection.png)
+
 
 ## Just Curious: Math versus Reading
 

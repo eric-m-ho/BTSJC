@@ -41,7 +41,7 @@ data for all of my students), but with their English test scores included.
 
 ## Time
 
-I thought the most interesting data available was the Time data. Some of my students quite early while others took their time.
+I thought the most interesting data available was the Time data. Some of my students finished early while others took their time.
 I decided to see whether time made a difference.
 
 #### Time vs. Math Change
